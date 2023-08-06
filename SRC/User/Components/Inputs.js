@@ -2,15 +2,19 @@ import React from "react";
 import {View, StyleSheet, Text} from 'react-native';
 import { TextInput } from "react-native";
 
-const Input= ({name, value, onChangeText, style, onPress}) =>{
+const Input= ({name, value, onChangeText, style, onPress,isPassword}) =>{
 
+            const secureTextEntry=isPassword ?true :false ;    
     return(
-        <View style={styles.container}>
-       <TextInput style={[styles.TextInputBody, style]} 
+        <View  style={style} >
+       <TextInput 
         placeholder={name} 
         value={value}
         onChangeText={onChangeText}
         onPress={onPress}
+        secureTextEntry={secureTextEntry}
+        
+        
        
        />
         </View>
@@ -21,7 +25,7 @@ export default Input;
 
 const styles = StyleSheet.create({
     container: {
-        width:'60%',
+        width:'70%',
         
     
       

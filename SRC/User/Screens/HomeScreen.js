@@ -5,7 +5,8 @@ import HomeMap from '../Components/HomeMap';
 import Button from '../Components/Button'
 
 
-const HomeScreen= ({navigation})=>{
+const HomeScreen= ({navigation, route})=>{
+  const name=route.params
 
     return(
       <View style={styles.container}>
@@ -13,6 +14,7 @@ const HomeScreen= ({navigation})=>{
        <HomeMap   /> 
         </View>
         <View style={styles.box2}>
+          <Text>{name}</Text>
              
                 <Button style={styles.inputHomeScreen} 
                 title="Where to?" 

@@ -2,9 +2,19 @@
 import React from "react";
 import {View, StyleSheet, Text, Image,SafeAreaView} from 'react-native';
 import Button from "../Components/Button";
+import { useNavigation } from "@react-navigation/native";
 
 
-const Landing= ({navigation}) =>{
+const Landing= () =>{
+
+    const navigation=useNavigation();
+
+
+    const signUPUser=()=>{
+        //alert('user logged in successfully');
+        navigation.navigate('SignUp');
+       // navigation.dispatch(StackActions.popToTop());
+     }
 
     return(
 
@@ -22,7 +32,7 @@ const Landing= ({navigation}) =>{
             <Text style={styles.landingText}> WELCOME TO N-AMBULANCE </Text>
             </View>
             <View>
-              <Button  title="Get started" onPress={()=>{navigation.navigate('SignUp')}}/>
+              <Button  title="Get started" onPress={signUPUser}/>
             </View>
          
         </View>

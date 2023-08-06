@@ -1,14 +1,34 @@
 
-import React from "react";
+import React, { useContext } from "react";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+//import { FontAwesome } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import {View, StyleSheet, Text} from 'react-native';
+//import { StackActions } from '@react-navigation/native';
 import Input from "../Components/Inputs";
 import Button from "../Components/Button";
 
+
 const Login= ({navigation}) =>{
 
+   // const {setUser}=useContext(AuthContext);
+
     const LoginUser=()=>{
+
+        //const dbRef = ref(db, 'ambulanceAppUsers');
+//  onValue(dbRef, snapshot => {
+    // const data = snapshot.val();
+
+    // let userFound= false;
+    
+    // Object.keys(data).forEach(userId => {
+    //   const user = data[userId];
+    //   if (user_email === user_mail && user_password ===Password) {
+    //     userFound = true;
+
        //alert('user logged in successfully');
-       navigation.navigate('HomeScreen')
+      navigation.navigate('HomeScreen', 'ismail');
+      // navigation.dispatch(StackActions.popToTop());
     }
 
     return(
@@ -17,8 +37,19 @@ const Login= ({navigation}) =>{
             <Text style={styles.loginText}> Log In Your Account </Text>
             </View>
             <View>
-            <Input name=" email address" />
-            <Input name=" password" />
+                <View style={styles.inputContainer}>
+
+                <MaterialCommunityIcons name="email-outline" size={24} color="black" />
+                     <Input name=" email address" />
+
+            </View>
+
+            <View style={styles.inputContainer}>
+
+            <Ionicons name="key-outline" size={24} color="black" />
+            <Input name=" password" isPassword={true} />
+
+            </View>
             </View>
             <View>
             <Button title="Log in"  onPress={LoginUser}/>
@@ -41,7 +72,7 @@ const styles = StyleSheet.create({
       marginLeft:30,
       
     
-      backgroundColor: '#D9D9D9',
+      backgroundColor: 'white',
      
     
     },
@@ -52,6 +83,18 @@ const styles = StyleSheet.create({
         
 
     },
+    inputContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: 'gray',
+        borderRadius: 8,
+        width:'90%',
+        padding:8,
+        paddingHorizontal: 10,
+        marginTop:10,
+        marginLeft:15
+      },
     submitButton:{
         width:'60%',
         backgroundColor:'green',

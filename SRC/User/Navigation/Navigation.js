@@ -10,6 +10,9 @@ import Landing from '../Screens/Landing';
 import HomeScreen from '../Screens/HomeScreen';
 import DestinationScreen from '../Screens/DestinationScreen';
 import SearchResult from '../Screens/SearchResult';
+import RequestProcessing from '../Screens/RequestProcessing';
+
+// import { AuthProvider } from './AuthContext';
 
 
 
@@ -26,6 +29,7 @@ const Navigation = (props) => {
             <stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown:false}} />
             <stack.Screen name="searchScreen" component={DestinationScreen} options={{headerShown:false}} />
             <stack.Screen name="SearchResult" component={SearchResult} options={{headerShown:false}} />
+            <stack.Screen name="RequestProcessing" component={RequestProcessing} options={{headerShown:false}} />
 
             </stack.Navigator>
         </NavigationContainer>
